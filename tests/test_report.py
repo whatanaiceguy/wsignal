@@ -1,8 +1,8 @@
-from datetime import UTC, date, datetime
+from datetime import UTC, date, datetime, timedelta
 
 import pytest
 
-from wsignal.interface.report import render, render_meta, save
+from wsignal.interface.report import _stats, render, render_meta, save
 from wsignal.interface.schemas import (
     Citation,
     Entry,
@@ -13,7 +13,7 @@ from wsignal.interface.schemas import (
     SearchStats,
     SourceType,
 )
-from wsignal.models import ENTRY_STATES, PATTERN_KINDS
+from wsignal.models import ENTRY_STATES, PATTERN_KINDS, Run
 from wsignal.parsing.base import TIER_SOCIAL, tier_name
 
 
@@ -75,6 +75,36 @@ def _response(n: int = 3, **over) -> SearchResponse:
         models_used={"orchestrator": "openai/gpt-5.6-luna"},
         **over,
     )
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("with_events,expected", [(True, 2441.1), (False, 6062.1)])
+async def test_report_elapsed_excludes_idle_gap_and_preserves_rounding(with_events, expected):
+    start = datetime(2026, 9, 29, 17, 52, tzinfo=UTC)
+    run = Run(
+        id=3, query="resumed", state="exhausted", started_at=start,
+        finished_at=start + timedelta(seconds=6062.14),
+    )
+
+    class Session:
+        async def scalar(self, statement):
+            return 0
+
+        async def execute(self, statement):
+            assert statement.compile().params["run_id_1"] == 3
+            assert "run_events.ts, run_events.id" in str(statement)
+            return [
+                (kind, start + timedelta(seconds=seconds))
+                for kind, seconds in [
+                    ("run_started", 0), ("run_stopped", 2402),
+                    ("run_started", 6023), ("run_stopped", 6062.14),
+                ]
+            ] if with_events else []
+
+    stats = await _stats(Session(), run, [])
+
+    assert stats.elapsed_seconds == expected
+    assert isinstance(stats.elapsed_seconds, float)
 
 
 def test_the_reasoning_is_in_the_text():

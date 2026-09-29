@@ -10,6 +10,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from wsignal.config import get_settings
 from wsignal.inference.accounting import context_sources, per_agent, per_run, per_source
 from wsignal.inference.scoring import entry_ordering
+from wsignal.interface.run_history import active_elapsed_seconds
 from wsignal.interface.schemas import Citation as CitationOut
 from wsignal.interface.schemas import Entry as EntryOut
 from wsignal.interface.schemas import Pattern as PatternOut
@@ -26,6 +27,7 @@ from wsignal.models import (
     FieldRename,
     Refutation,
     Run,
+    RunEvent,
 )
 from wsignal.parsing.base import tier_name
 
@@ -245,8 +247,20 @@ async def _stats(session: AsyncSession, run: Run, entries: list[EntryOut]) -> Se
         await session.scalar(select(func.count(Agent.id)).where(Agent.run_id == run.id))
     ) or 0
 
-    finished = run.finished_at or datetime.now(UTC)
-    elapsed = (finished - run.started_at).total_seconds() if run.started_at else 0.0
+    marks = await session.execute(
+        select(RunEvent.kind, RunEvent.ts).where(
+            RunEvent.run_id == run.id,
+            RunEvent.kind.in_(("run_started", "run_stopped")),
+        ).order_by(RunEvent.ts, RunEvent.id)
+    )
+    elapsed = active_elapsed_seconds(
+        started_at=run.started_at,
+        finished_at=run.finished_at,
+        heartbeat_at=run.heartbeat_at,
+        state=run.state,
+        marks=marks,
+        now=datetime.now(UTC),
+    )
 
     return SearchStats(
         candidates_found=len(entries),

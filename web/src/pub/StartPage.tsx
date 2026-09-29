@@ -10,7 +10,7 @@ export function StartPage() {
   const start = useStartRun()
   const nav = useNavigate()
   const [q, setQ] = useState('')
-  const [depth, setDepth] = useState(7)
+  const [depth, setDepth] = useState(30)
   const [budget, setBudget] = useState(3)
   const [top, setTop] = useState<number | null>(15)
   const list = runs.data ?? []

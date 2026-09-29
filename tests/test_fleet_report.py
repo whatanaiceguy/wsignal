@@ -32,6 +32,7 @@ class _ReportSession:
             state="finished",
             started_at=datetime.now(UTC),
             finished_at=datetime.now(UTC),
+            heartbeat_at=None,
         )
 
     async def scalars(self, statement):
