@@ -133,7 +133,7 @@ export function ReportPage() {
     )
     if (extra || more) {
       return (
-        <details className="pn" style={{ marginBottom: 12 }}>
+        <details className="pn" style={{ marginBottom: 12 }} open={extra && top.length === 0}>
           <summary>{title} ({rows.length}) <span className="x">{hint}</span></summary>
           {body}
         </details>
@@ -180,6 +180,11 @@ export function ReportPage() {
       <div ref={list} />
       {top.length > 0 && table(top, rest.length ? `Слабые сигналы · топ-${topN}` : 'Слабые сигналы', 'по слабости: реальность × динамика × незаметность')}
       {rest.length > 0 && table(rest, 'Остальные слабые сигналы', `ниже топ-${topN}, тот же порядок`, false, true)}
+      {top.length === 0 && excluded.length > 0 && (
+        <div className="callout">
+          <b>Слабых сигналов не найдено.</b> Все кандидаты ({excluded.length}) исключены как зрелые технологии или шум; причины приведены ниже.
+        </div>
+      )}
       {excluded.length > 0 && table(excluded, 'Исключённые кандидаты', 'зрелые и нерелевантные, с причиной', true)}
       {!entries.length && <div className="callout">Записей пока нет.</div>}
       <div ref={det} />

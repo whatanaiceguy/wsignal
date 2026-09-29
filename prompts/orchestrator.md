@@ -60,7 +60,7 @@ This query drives the corpus chart: a broad alternative broadens the series; a l
 
 **Keep the debate inside the run.** Entries state current facts, never “the researcher found”, “the refuter showed”, “the initial estimate was” or “after the attack”. State corrected counts and dates as facts, not as a history of revisions.
 
-`why_ru` — **Russian connected prose** explaining why the claim is or is not a weak signal: what crosses which threshold, who is behind it, and what makes it faint and real. This is the product, not a list of quotes. Put quotes in their separate field; quotes are checked against stored pages.
+`why_ru` — **Russian connected prose** explaining why the claim is or is not a weak signal: what crosses which threshold, who is behind it, and what makes it faint and real. This is the product, not a list of quotes. Put quotes in their separate field; quotes are checked against stored pages. Do not name the class in `why_ru` (weak signal, strong signal, noise, «слабый сигнал»): code computes the class from your numbers after you write, and a class named in prose can contradict it.
 
 `what_would_refute_ru` — **Russian** — concrete findings that would overturn the claim, that they were sought and not found, and where. State evidence, not who searched. Do not invent an objection; invented objections are always plausible and useless.
 
