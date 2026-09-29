@@ -1,0 +1,2087 @@
+{
+ "_": [
+  "The host register. Edit this file by hand: add a host, set its feed url,",
+  "flip `poll` off to stop polling one without deleting what we learned.",
+  "",
+  "`source` is provenance and is load-bearing rather than decoration.",
+  "`dataset` means the host appears in the 100 signals Gazprombank supplied,",
+  "and `dataset_urls` is how many of that file's 283 urls point at it, which",
+  "is the closest thing we have to how much their own curators trusted it.",
+  "`manual` means we added it; it carries no such endorsement and should say",
+  "in `note` who added it and why.",
+  "",
+  "`feed` null means no feed was found by the 2026-09-18 probe, not that none",
+  "exists: the probe read each homepage's declared <link rel=alternate> and",
+  "then guessed four common paths, so it is a floor. A host whose homepage",
+  "403s could not be read at all and is the likeliest place a feed is being",
+  "missed; `note` says which case a null is.",
+  "",
+  "`items_seen` is how many entries that feed carried when probed. A feed is",
+  "a current window of 10-50 items, never an archive, so this register",
+  "supports discovering what is new and cannot answer a question about 2019."
+ ],
+ "generated": "2026-09-18",
+ "derived_from": "source URLs of the organisers' 100-signal dataset (not included in the repository)",
+ "hosts": [
+  {
+   "host": "arxiv.org",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 18,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "techcrunch.com",
+   "feed": "https://techcrunch.com/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 10,
+   "discovered": "declared",
+   "items_seen": 20,
+   "note": null
+  },
+  {
+   "host": "siliconangle.com",
+   "feed": "https://siliconangle.com/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 8,
+   "discovered": "guessed",
+   "items_seen": 30,
+   "note": null
+  },
+  {
+   "host": "theaiinsider.tech",
+   "feed": "https://theaiinsider.tech/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 7,
+   "discovered": "declared",
+   "items_seen": 9,
+   "note": null
+  },
+  {
+   "host": "nature.com",
+   "feed": "https://www.nature.com/nature.rss",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 5,
+   "discovered": "declared",
+   "items_seen": 75,
+   "note": "one poll returned 3 KB of HTML on a 200; not reproducible, the feed serves 75 items normally. 2026-09-18."
+  },
+  {
+   "host": "cloud.google.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 4,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "prnewswire.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 4,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "datacenterdynamics.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 3,
+   "discovered": null,
+   "items_seen": 0,
+   "note": "cloudflare or access-denied on article pages"
+  },
+  {
+   "host": "geekwire.com",
+   "feed": "https://www.geekwire.com/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 3,
+   "discovered": "guessed",
+   "items_seen": 35,
+   "note": null
+  },
+  {
+   "host": "github.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 3,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "pandaily.com",
+   "feed": "https://pandaily.com/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 3,
+   "discovered": "guessed",
+   "items_seen": 20,
+   "note": null
+  },
+  {
+   "host": "roboticsandautomationnews.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 3,
+   "discovered": null,
+   "items_seen": 0,
+   "note": "did not answer when probed"
+  },
+  {
+   "host": "businesswire.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 2,
+   "discovered": null,
+   "items_seen": 0,
+   "note": "cloudflare or access-denied on article pages"
+  },
+  {
+   "host": "edge-ai-vision.com",
+   "feed": "https://www.edge-ai-vision.com/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 2,
+   "discovered": "declared",
+   "items_seen": 50,
+   "note": null
+  },
+  {
+   "host": "eetimes.com",
+   "feed": "https://www.eetimes.com/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 2,
+   "discovered": "declared",
+   "items_seen": 10,
+   "note": null
+  },
+  {
+   "host": "eu-startups.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 2,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "europol.europa.eu",
+   "feed": "https://www.europol.europa.eu/cms/api/rss/news",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 2,
+   "discovered": "guessed",
+   "items_seen": 10,
+   "note": null
+  },
+  {
+   "host": "finance.yahoo.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 2,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "fortune.com",
+   "feed": "https://fortune.com/feed/fortune-feeds/?id=3230629",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 2,
+   "discovered": "guessed",
+   "items_seen": 10,
+   "note": null
+  },
+  {
+   "host": "jpmorgan.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 2,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "mdpi.com",
+   "feed": "https://www.mdpi.com/rss",
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 2,
+   "discovered": "declared",
+   "items_seen": 100,
+   "note": "403 to a browser user agent as well, from a residential exit. They are refusing us, not blocking a bot string. 2026-09-18."
+  },
+  {
+   "host": "pulse2.com",
+   "feed": "https://pulse2.com/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 2,
+   "discovered": "guessed",
+   "items_seen": 20,
+   "note": null
+  },
+  {
+   "host": "reuters.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 2,
+   "discovered": null,
+   "items_seen": 0,
+   "note": "paywalled"
+  },
+  {
+   "host": "runtimewire.com",
+   "feed": "https://runtimewire.com/rss/investigations.xml",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 2,
+   "discovered": "declared",
+   "items_seen": 47,
+   "note": null
+  },
+  {
+   "host": "techfundingnews.com",
+   "feed": "https://techfundingnews.com/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 2,
+   "discovered": "guessed",
+   "items_seen": 10,
+   "note": null
+  },
+  {
+   "host": "theblock.co",
+   "feed": "https://www.theblock.co/rss.xml",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 2,
+   "discovered": "guessed",
+   "items_seen": 20,
+   "note": null
+  },
+  {
+   "host": "therobotreport.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 2,
+   "discovered": null,
+   "items_seen": 0,
+   "note": "cloudflare or access-denied on article pages"
+  },
+  {
+   "host": "thesaasnews.com",
+   "feed": "https://www.thesaasnews.com/news/rss/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 2,
+   "discovered": "declared",
+   "items_seen": 15,
+   "note": null
+  },
+  {
+   "host": "tomshardware.com",
+   "feed": "https://www.tomshardware.com/feeds.xml",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 2,
+   "discovered": "declared",
+   "items_seen": 50,
+   "note": null
+  },
+  {
+   "host": "ycombinator.com",
+   "feed": "https://www.ycombinator.com/blog/feed",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 2,
+   "discovered": "declared",
+   "items_seen": 15,
+   "note": null
+  },
+  {
+   "host": "1kosmos.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "1x.tech",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "abovea.tech",
+   "feed": "https://abovea.tech/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "accessnewswire.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": "cloudflare or access-denied on article pages"
+  },
+  {
+   "host": "agentfacts.org",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "agenticindex.io",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "agentmarketcap.ai",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "ai.google.dev",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "aiche.confex.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "aisecurityandsafety.org",
+   "feed": "https://aisecurityandsafety.org/en/feed.xml",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "guessed",
+   "items_seen": 757,
+   "note": null
+  },
+  {
+   "host": "akamai.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "allaboutcircuits.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": "cloudflare or access-denied on article pages"
+  },
+  {
+   "host": "allenai.org",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": "cloudflare or access-denied on article pages"
+  },
+  {
+   "host": "amd.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "amlintelligence.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "amlnetwork.org",
+   "feed": "https://amlnetwork.org/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 10,
+   "note": null
+  },
+  {
+   "host": "anthropic.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "apolloresearch.ai",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "app.fundz.net",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "appsecsanta.com",
+   "feed": "https://appsecsanta.com/index.xml",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "guessed",
+   "items_seen": 50,
+   "note": null
+  },
+  {
+   "host": "ar5iv.labs.arxiv.org",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "asia.ccb.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "awesomeagents.ai",
+   "feed": "https://awesomeagents.ai/index.xml",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "guessed",
+   "items_seen": 20,
+   "note": null
+  },
+  {
+   "host": "biometricupdate.com",
+   "feed": "https://www.biometricupdate.com/feed",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "guessed",
+   "items_seen": 10,
+   "note": null
+  },
+  {
+   "host": "bits-chips.com",
+   "feed": "https://bits-chips.com/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 10,
+   "note": null
+  },
+  {
+   "host": "blog.cloudflare.com",
+   "feed": "https://blog.cloudflare.com/rss/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 20,
+   "note": null
+  },
+  {
+   "host": "blog.digitalasset.com",
+   "feed": "https://blog.digitalasset.com/blog/rss.xml",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 10,
+   "note": null
+  },
+  {
+   "host": "blog.zk.me",
+   "feed": "https://blog.zk.me/rss/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 15,
+   "note": null
+  },
+  {
+   "host": "blogs.cisco.com",
+   "feed": "https://blogs.cisco.com/feed",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 9,
+   "note": null
+  },
+  {
+   "host": "blogs.microsoft.com",
+   "feed": "https://blogs.microsoft.com/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "guessed",
+   "items_seen": 10,
+   "note": null
+  },
+  {
+   "host": "calcalistech.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "capaloai.com",
+   "feed": "https://capaloai.com/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "guessed",
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "celent.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "cftc.gov",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "cgap.org",
+   "feed": "https://www.cgap.org/blogs/rss.xml",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 10,
+   "note": null
+  },
+  {
+   "host": "chinadaily.com.cn",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "cignal.ai",
+   "feed": "https://cignal.ai/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 20,
+   "note": null
+  },
+  {
+   "host": "cirt.gy",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "citigroup.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "coinpaprika.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "computeexpresslink.org",
+   "feed": "https://computeexpresslink.org/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 10,
+   "note": null
+  },
+  {
+   "host": "computerfraudsecurity.com",
+   "feed": "https://computerfraudsecurity.com/index.php/journal/gateway/plugin/WebFeedGatewayPlugin/atom",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 6,
+   "note": null
+  },
+  {
+   "host": "confidential.ai",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "consilient.com",
+   "feed": "https://consilient.com/feed",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 10,
+   "note": null
+  },
+  {
+   "host": "corsound.ai",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "credora.network",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "credprotocol.com",
+   "feed": "https://credprotocol.com/feed.xml",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "guessed",
+   "items_seen": 16,
+   "note": null
+  },
+  {
+   "host": "crossmint.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "crowdfundinsider.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "cryptodaily.co.uk",
+   "feed": "https://cryptodaily.co.uk/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "guessed",
+   "items_seen": 200,
+   "note": null
+  },
+  {
+   "host": "cryptomathic.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "datacenterfrontier.com",
+   "feed": "https://www.datacenterfrontier.com/__rss/website-scheduled-content.xml?input=%7B%22sectionAlias%22%3A%22home%22%7D",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 25,
+   "note": null
+  },
+  {
+   "host": "dbs.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "deploymentsafety.openai.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": "did not answer when probed"
+  },
+  {
+   "host": "develop3d.com",
+   "feed": "https://develop3d.com/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 10,
+   "note": null
+  },
+  {
+   "host": "developers.cloudflare.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "dhs.gov",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": "cloudflare or access-denied on article pages"
+  },
+  {
+   "host": "discoveryalert.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "docs.phala.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "dutchstartup.ai",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "economictimes.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "elib.uni-stuttgart.de",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "embodiedglobal.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "en.alpsentek.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": "did not answer when probed"
+  },
+  {
+   "host": "en.wowtale.net",
+   "feed": "https://en.wowtale.net/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 10,
+   "note": null
+  },
+  {
+   "host": "f6s.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": "cloudflare or access-denied on article pages"
+  },
+  {
+   "host": "finance-commerce.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": "cloudflare or access-denied on article pages"
+  },
+  {
+   "host": "fintech.global",
+   "feed": "https://fintech.global/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 10,
+   "note": null
+  },
+  {
+   "host": "flagright.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "fluix.ai",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "frontiersin.org",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "geo.sig.ai",
+   "feed": "https://geo.sig.ai/blog/rss.xml",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 8,
+   "note": null
+  },
+  {
+   "host": "gizmodo.com",
+   "feed": "https://gizmodo.com/feed",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 20,
+   "note": null
+  },
+  {
+   "host": "globenewswire.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "gmacouncil.org",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": "did not answer when probed"
+  },
+  {
+   "host": "help.zededa.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": "cloudflare or access-denied on article pages"
+  },
+  {
+   "host": "highways.today",
+   "feed": "https://highways.today/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 40,
+   "note": null
+  },
+  {
+   "host": "hirundo.io",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "huggingface.co",
+   "feed": "https://huggingface.co/blog/feed.xml",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 862,
+   "note": null
+  },
+  {
+   "host": "hypertrends.com",
+   "feed": "https://www.hypertrends.com/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 10,
+   "note": null
+  },
+  {
+   "host": "ibecbarcelona.eu",
+   "feed": "https://ibecbarcelona.eu/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 10,
+   "note": null
+  },
+  {
+   "host": "idc.com",
+   "feed": "https://www.idc.com/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "guessed",
+   "items_seen": 10,
+   "note": null
+  },
+  {
+   "host": "ijiemjournal.uns.ac.rs",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "imt-starter.fr",
+   "feed": "https://www.imt-starter.fr/feed",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "guessed",
+   "items_seen": 10,
+   "note": null
+  },
+  {
+   "host": "indianstartupnews.com",
+   "feed": "https://indianstartupnews.com/rss",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "guessed",
+   "items_seen": 50,
+   "note": null
+  },
+  {
+   "host": "infohub.delltechnologies.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "insidedeeptech.com",
+   "feed": "https://www.insidedeeptech.com/rss/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 15,
+   "note": null
+  },
+  {
+   "host": "intelcapital.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "interestingengineering.com",
+   "feed": "https://interestingengineering.com/feed",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "guessed",
+   "items_seen": 9,
+   "note": null
+  },
+  {
+   "host": "invariantlabs.ai",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "investor.nvidia.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": "cloudflare or access-denied on article pages"
+  },
+  {
+   "host": "invezz.com",
+   "feed": "https://invezz.com/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "guessed",
+   "items_seen": 15,
+   "note": null
+  },
+  {
+   "host": "ioplus.nl",
+   "feed": "https://ioplus.nl/en/feed",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "guessed",
+   "items_seen": 20,
+   "note": null
+  },
+  {
+   "host": "is.mpg.de",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "jobswithstartups.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "kamiwaza.ai",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "labs.snyk.io",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "leaderobot.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": "did not answer when probed"
+  },
+  {
+   "host": "marianaminerals.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "marvell.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "micro-insurance.yas.com.hk",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "microsoft.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "momenta.vc",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "mpp.dev",
+   "feed": "https://mpp.dev/rss.xml",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 9,
+   "note": null
+  },
+  {
+   "host": "networkworld.com",
+   "feed": "https://www.networkworld.com/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 20,
+   "note": null
+  },
+  {
+   "host": "neuromorphiccore.ai",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "neuronfeed.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "neutronrise.com",
+   "feed": "https://neutronrise.com/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 10,
+   "note": null
+  },
+  {
+   "host": "newmarketpitch.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "guessed",
+   "items_seen": 0,
+   "note": "probe guessed /index.xml on a content-type false positive; it serves HTML and the homepage declares no feed. 2026-09-18"
+  },
+  {
+   "host": "news.microsoft.com",
+   "feed": "https://news.microsoft.com/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "guessed",
+   "items_seen": 10,
+   "note": null
+  },
+  {
+   "host": "nextplatform.com",
+   "feed": "https://www.nextplatform.com/?lab_viewport=rss",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "guessed",
+   "items_seen": 83,
+   "note": null
+  },
+  {
+   "host": "nordicsemi.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": "cloudflare or access-denied on article pages"
+  },
+  {
+   "host": "novarctech.com",
+   "feed": "https://www.novarctech.com/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "guessed",
+   "items_seen": 10,
+   "note": null
+  },
+  {
+   "host": "nvidianews.nvidia.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": "cloudflare or access-denied on article pages"
+  },
+  {
+   "host": "openai.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": "did not answer when probed"
+  },
+  {
+   "host": "openfort.io",
+   "feed": "https://www.openfort.io/rss.xml",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 150,
+   "note": null
+  },
+  {
+   "host": "oxmaint.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "patsnap.com",
+   "feed": "https://www.patsnap.com/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 10,
+   "note": null
+  },
+  {
+   "host": "phala.com",
+   "feed": "https://phala.com/rss.xml",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 100,
+   "note": null
+  },
+  {
+   "host": "pi.website",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "picmagazine.net",
+   "feed": "https://picmagazine.net/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "guessed",
+   "items_seen": 10,
+   "note": null
+  },
+  {
+   "host": "pmc.ncbi.nlm.nih.gov",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "polygon.technology",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "premisys.ai",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "prophesee.ai",
+   "feed": "https://www.prophesee.ai/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 10,
+   "note": null
+  },
+  {
+   "host": "pubs.rsc.org",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": "cloudflare or access-denied on article pages"
+  },
+  {
+   "host": "qualcomm.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "radware.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "recodex.pro",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "robotsatlas.com",
+   "feed": "https://robotsatlas.com/rss.xml",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 50,
+   "note": null
+  },
+  {
+   "host": "science.org",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": "cloudflare or access-denied on article pages"
+  },
+  {
+   "host": "securityscientist.net",
+   "feed": "https://www.securityscientist.net/blog/rss/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 15,
+   "note": null
+  },
+  {
+   "host": "securityweek.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": "did not answer when probed"
+  },
+  {
+   "host": "seedlist.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "sei.cmu.edu",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "semiai.ai",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "semiwiki.com",
+   "feed": "https://semiwiki.com/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 5,
+   "note": null
+  },
+  {
+   "host": "sharpa.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "guessed",
+   "items_seen": 0,
+   "note": "probe guessed /index.xml on a content-type false positive; it serves HTML and the homepage declares no feed. 2026-09-18"
+  },
+  {
+   "host": "sherpa.ai",
+   "feed": "https://sherpa.ai/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 10,
+   "note": "403 to our identifying user agent, 200 to a browser one. Fixed by the per-host UA in http.py, 2026-09-18."
+  },
+  {
+   "host": "snu.elsevierpure.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "speedrun.a16z.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "startup-seeker.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "startupfundraising.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": "did not answer when probed"
+  },
+  {
+   "host": "startupresearcher.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "startupticker.ch",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "stellagent.ai",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "stlpartners.com",
+   "feed": "https://stlpartners.com/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 2,
+   "note": null
+  },
+  {
+   "host": "stocktitan.net",
+   "feed": "https://www.stocktitan.net/rss",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 100,
+   "note": null
+  },
+  {
+   "host": "streamanalyze.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "swift.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "syncrobotic.ai",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "tamradar.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "tech.yahoo.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "techbeat.ca",
+   "feed": "https://techbeat.ca/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 10,
+   "note": "403 to our identifying user agent, 200 to a browser one. Fixed by the per-host UA in http.py, 2026-09-18."
+  },
+  {
+   "host": "techpowerup.com",
+   "feed": "https://www.techpowerup.com/rss/news",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 127,
+   "note": null
+  },
+  {
+   "host": "techradar.com",
+   "feed": "https://global.techradar.com/nl-nl/feeds.xml",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 50,
+   "note": null
+  },
+  {
+   "host": "techstartups.com",
+   "feed": "https://techstartups.com/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 20,
+   "note": null
+  },
+  {
+   "host": "techxplore.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": "cloudflare or access-denied on article pages"
+  },
+  {
+   "host": "tempo.xyz",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "theasianbanker.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "thedeeptech.in",
+   "feed": "https://thedeeptech.in/feed.xml",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 359,
+   "note": null
+  },
+  {
+   "host": "thehumanoidrace.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "theinnovator.news",
+   "feed": "https://theinnovator.news/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 10,
+   "note": null
+  },
+  {
+   "host": "theregister.com",
+   "feed": "https://api.theregister.com/api/v1/article?orderBy=published&site_id=2&remapper=rss",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "guessed",
+   "items_seen": 50,
+   "note": null
+  },
+  {
+   "host": "theroboticlife.com",
+   "feed": "https://theroboticlife.com/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 10,
+   "note": null
+  },
+  {
+   "host": "tianpan.co",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "tinfoil.sh",
+   "feed": "https://tinfoil.sh/feed.xml",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "guessed",
+   "items_seen": 24,
+   "note": null
+  },
+  {
+   "host": "trysignalbase.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "unite.ai",
+   "feed": "https://www.unite.ai/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 25,
+   "note": "403 to our identifying user agent, 200 to a browser one. Fixed by the per-host UA in http.py, 2026-09-18."
+  },
+  {
+   "host": "veea.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "venturelab.swiss",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "wccftech.com",
+   "feed": "https://wccftech.com/feed/",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "guessed",
+   "items_seen": 20,
+   "note": null
+  },
+  {
+   "host": "x.com",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "yespress.io",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": "cloudflare or access-denied on article pages"
+  },
+  {
+   "host": "zylos.ai",
+   "feed": null,
+   "poll": false,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": null,
+   "items_seen": 0,
+   "note": null
+  },
+  {
+   "host": "zyphe.com",
+   "feed": "https://www.zyphe.com/enforcement.xml",
+   "poll": true,
+   "source": "dataset",
+   "dataset_urls": 1,
+   "discovered": "declared",
+   "items_seen": 27,
+   "note": null
+  }
+ ]
+}

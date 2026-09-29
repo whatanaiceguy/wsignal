@@ -1,0 +1,82 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-base: #0c1116;
+  --color-panel: #121922;
+  --color-raised: #19222d;
+  --color-sunken: #080c11;
+  --color-line: #222c38;
+  --color-line-soft: #18202a;
+
+  --color-ink: #e3ebf2;
+  --color-ink-2: #9aabbb;
+  --color-ink-3: #64748a;
+
+  --color-accent: #4c9aff;
+
+  --color-role-orchestrator: #d9a441;
+  --color-role-assistant: #9b8cf0;
+  --color-role-researcher: #45b6ac;
+  --color-role-refuter: #e0728c;
+
+  --color-live-running: #4c9aff;
+  --color-live-done: #57a86b;
+  --color-live-idle: #64748a;
+  --color-live-failed: #e05c5c;
+
+  --color-entry-banked: #57a86b;
+  --color-entry-parked: #d9a441;
+  --color-entry-noise: #64748a;
+  --color-entry-insufficient: #b06a7a;
+
+  --color-tier-unknown: #64748a;
+  --color-tier-authoritative: #4c9aff;
+  --color-tier-trade: #45b6ac;
+  --color-tier-social: #d9a441;
+
+  --color-kind-system: #64748a;
+  --color-kind-user: #7fa8d8;
+  --color-kind-assistant: #9b8cf0;
+  --color-kind-tool: #45b6ac;
+
+  --font-mono: ui-monospace, 'Cascadia Mono', 'Consolas', monospace;
+  --font-sans: ui-sans-serif, 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-base);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}

@@ -1,0 +1,26 @@
+# Anything executed inside a Linux container must be LF. A CRLF shell script
+# fails with `bad interpreter: /usr/bin/env bash^M`, which does not name line
+# endings anywhere in the error and costs an afternoon on a fresh Windows clone.
+*.sh            text eol=lf
+*.bash          text eol=lf
+Dockerfile      text eol=lf
+*.Dockerfile    text eol=lf
+*.yml           text eol=lf
+*.yaml          text eol=lf
+*.py            text eol=lf
+*.toml          text eol=lf
+*.ts            text eol=lf
+*.tsx           text eol=lf
+*.css           text eol=lf
+*.html          text eol=lf
+*.json          text eol=lf
+*.ini           text eol=lf
+.env.example    text eol=lf
+prompts/*.md    text eol=lf
+
+# Windows launchers are read by cmd.exe and want CRLF.
+*.cmd           text eol=crlf
+*.bat           text eol=crlf
+*.ps1           text eol=crlf
+
+*.lock          text eol=lf -diff

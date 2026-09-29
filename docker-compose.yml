@@ -1,0 +1,73 @@
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-wsignal}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-wsignal}
+      POSTGRES_DB: ${POSTGRES_DB:-wsignal}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-wsignal} -d ${POSTGRES_DB:-wsignal}"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+  api:
+    build:
+      context: .
+      dockerfile: docker/api.Dockerfile
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      WSIGNAL_DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-wsignal}:${POSTGRES_PASSWORD:-wsignal}@db:5432/${POSTGRES_DB:-wsignal}
+      WSIGNAL_MODE: ${WSIGNAL_MODE:-auto}
+      WSIGNAL_RELAY_URL: ${WSIGNAL_RELAY_URL:-https://api.1f608.com}
+      WSIGNAL_ROUTE_LLM: ${WSIGNAL_ROUTE_LLM:-}
+      WSIGNAL_ROUTE_CORPUS: ${WSIGNAL_ROUTE_CORPUS:-}
+      WSIGNAL_ROUTE_BRAVE: ${WSIGNAL_ROUTE_BRAVE:-}
+      WSIGNAL_ROUTE_EPO: ${WSIGNAL_ROUTE_EPO:-}
+      WSIGNAL_ROUTE_ROSPATENT: ${WSIGNAL_ROUTE_ROSPATENT:-}
+      WSIGNAL_ROUTE_X: ${WSIGNAL_ROUTE_X:-}
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      WSIGNAL_LLM_BASE_URL: ${LLM_BASE_URL:-https://openrouter.ai/api/v1}
+      WSIGNAL_LLM_MODEL_ORCHESTRATOR: ${WSIGNAL_LLM_MODEL_ORCHESTRATOR:-}
+      WSIGNAL_LLM_MODEL_ASSISTANT: ${WSIGNAL_LLM_MODEL_ASSISTANT:-}
+      WSIGNAL_LLM_MODEL_RESEARCHER: ${WSIGNAL_LLM_MODEL_RESEARCHER:-}
+      WSIGNAL_LLM_MODEL_REFUTER: ${WSIGNAL_LLM_MODEL_REFUTER:-}
+      WSIGNAL_LLM_MODEL_EXTRACTOR: ${WSIGNAL_LLM_MODEL_EXTRACTOR:-}
+      CORPUS_URL: ${CORPUS_URL:-}
+      BRAVE_API_KEY: ${BRAVE_API_KEY:-}
+      EPO_CONSUMER_KEY: ${EPO_CONSUMER_KEY:-}
+      EPO_CONSUMER_SECRET_KEY: ${EPO_CONSUMER_SECRET_KEY:-}
+      SEARCHPLATFORM_ROSPATENT_API: ${SEARCHPLATFORM_ROSPATENT_API:-}
+      X_BEARER_TOKEN: ${X_BEARER_TOKEN:-}
+      OPENALEX_API_KEY: ${OPENALEX_API_KEY:-}
+      GITHUB_API_TOKEN: ${GITHUB_API_TOKEN:-}
+      FIRECRAWL_API_KEY: ${FIRECRAWL_API_KEY:-}
+      WSIGNAL_CONTACT_EMAIL: ${CONTACT_EMAIL:-}
+      WSIGNAL_RUN_BUDGET_MINUTES: ${WSIGNAL_RUN_BUDGET_MINUTES:-20}
+    depends_on:
+      db:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+    ports:
+      - "${API_PORT:-8000}:8000"
+    restart: unless-stopped
+
+  migrate:
+    build:
+      context: .
+      dockerfile: docker/api.Dockerfile
+    command: ["alembic", "upgrade", "head"]
+    environment:
+      WSIGNAL_DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-wsignal}:${POSTGRES_PASSWORD:-wsignal}@db:5432/${POSTGRES_DB:-wsignal}
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: "no"
+
+volumes:
+  pgdata:
