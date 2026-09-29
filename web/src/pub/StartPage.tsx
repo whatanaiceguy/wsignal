@@ -11,7 +11,7 @@ export function StartPage() {
   const nav = useNavigate()
   const [q, setQ] = useState('')
   const [depth, setDepth] = useState(7)
-  const [budget, setBudget] = useState(1)
+  const [budget, setBudget] = useState(3)
   const [top, setTop] = useState<number | null>(15)
   const list = runs.data ?? []
   const submit = () => {
@@ -72,7 +72,7 @@ export function StartPage() {
             </label>
             <label>Бюджет
               <select value={budget} onChange={(e) => setBudget(Number(e.target.value))}>
-                <option value={0.5}>$0.50</option><option value={1}>$1.00</option><option value={3}>$3.00</option><option value={5}>$5.00</option>
+                <option value={1}>$1.00</option><option value={3}>$3.00</option><option value={5}>$5.00</option>
               </select>
             </label>
             <label>В отчёте
