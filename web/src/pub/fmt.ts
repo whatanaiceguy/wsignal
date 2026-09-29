@@ -4,7 +4,7 @@ export const RU = {
   state: { finished: 'завершено', failed: 'сбой', running: 'идёт', exhausted: 'бюджет исчерпан', cancelled: 'остановлено', interrupted: 'прервано' } as Record<string, string>,
   cls: { weak: 'слабый сигнал', strong: 'сильный сигнал', noise: 'шум' } as Record<string, string>,
   role: { orchestrator: 'оркестратор', researcher: 'исследователь', refuter: 'оппонент', assistant: 'ассистент' } as Record<string, string>,
-  verdict: { proven: 'атака доказана', partly: 'частично', not_proven: 'не доказано' } as Record<string, string>,
+  verdict: { proven: 'критика подтверждена', partly: 'критика подтверждена частично', not_proven: 'критика не подтверждена' } as Record<string, string>,
   type: { paper: 'статья', patent: 'патент', standard: 'стандарт', news: 'новость', report: 'отчёт', repo: 'репозиторий', social: 'соцсеть', page: 'страница', fetch_failure: 'не загружено' } as Record<string, string>,
   tier: { authoritative: 'первоисточник', trade: 'отраслевой', social: 'соцсеть', unknown: 'не определён' } as Record<string, string>,
   lang: { en: 'англ.', ru: 'рус.', de: 'нем.', fr: 'фр.', ja: 'яп.', ko: 'кор.', zh: 'кит.', es: 'исп.' } as Record<string, string>,

@@ -91,6 +91,10 @@ export function Evidence({ e, all = false }: { e: Entry; all?: boolean }) {
 }
 
 const VERDICTS = ['proven', 'partly', 'not_proven']
+const ru = (n: number, one: string, few: string, many: string) => {
+  const d = n % 10, h = n % 100
+  return `${n} ${d === 1 && h !== 11 ? one : d >= 2 && d <= 4 && (h < 12 || h > 14) ? few : many}`
+}
 
 export function Opponent({ r, all = false }: { r: Refutation | null | undefined; all?: boolean }) {
   const [open, setOpen] = useState<number | 'all' | null>(all ? 'all' : null)
@@ -107,7 +111,7 @@ export function Opponent({ r, all = false }: { r: Refutation | null | undefined;
     <section className="pn">
       <h3>
         Оппонент против исследователя
-        <span className="x">{r.claims.length} атак · {r.responses.length} ответов{r.rebutted && !r.responses.length ? ' (текст ответа не сохранён)' : ''}</span>
+        <span className="x">{ru(r.claims.length, 'атака', 'атаки', 'атак')} · {ru(r.responses.length, 'ответ', 'ответа', 'ответов')}{r.rebutted && !r.responses.length ? ' (текст ответа не сохранён)' : ''}</span>
       </h3>
       <div className="vsum">{counts.map(([v, n]) => <span key={v} className={`vs-${v}`}>{n} · {RU.verdict[v]}</span>)}</div>
       <div className="pills">
