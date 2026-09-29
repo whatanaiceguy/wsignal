@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
 import { ChartLegend, CorpusChart } from './Chart'
 import { CLS_COLOR, GENERATED_NOTE, LOW_TRUST_TIERS, RU, SHOW_LOW_TRUST_BADGE, SHOW_SUMMARY_BADGE, date, host, num, sentences, toSeries, trend, trustedFirst } from './fmt'
 import { HttpError, useCorpusSeries, useResumeRun, useStopRun, type Citation, type Entry, type EntrySeries, type Refutation } from './model'
@@ -91,6 +91,7 @@ export function Evidence({ e, all = false }: { e: Entry; all?: boolean }) {
 }
 
 const VERDICTS = ['proven', 'partly', 'not_proven']
+const clip = (s: string, n: number) => (s.length > n ? s.slice(0, n).replace(/\s+\S*$/, '') + '…' : s)
 const ru = (n: number, one: string, few: string, many: string) => {
   const d = n % 10, h = n % 100
   return `${n} ${d === 1 && h !== 11 ? one : d >= 2 && d <= 4 && (h < 12 || h > 14) ? few : many}`
@@ -115,24 +116,26 @@ export function Opponent({ r, all = false }: { r: Refutation | null | undefined;
       </h3>
       <div className="vsum">{counts.map(([v, n]) => <span key={v} className={`vs-${v}`}>{n} · {RU.verdict[v]}</span>)}</div>
       <div className="pills">
-        {r.claims.map((c, i) => (
-          <button key={i} className={`pill ${c.verdict}${shown.includes(i) ? ' on' : ''}`} onClick={() => setOpen(open === i ? null : i)} title={c.opposite || c.claim || ''}>
-            <b>{RU.verdict[c.verdict] || c.verdict}</b>{sentences(c.opposite || c.claim, 1).slice(0, 110)}
-          </button>
-        ))}
+        {r.claims.map((c, i) => {
+          const resp = r.responses[i]
+          return (
+            <Fragment key={i}>
+              <button className={`pill ${c.verdict}${shown.includes(i) ? ' on' : ''}`} onClick={() => setOpen(open === i ? null : i)} title={c.opposite || c.claim || ''}>
+                <b>{RU.verdict[c.verdict] || c.verdict}</b>{clip(sentences(c.opposite || c.claim, 1), 110)}<span className="chev">{shown.includes(i) ? '▾' : '▸'}</span>
+              </button>
+              {shown.includes(i) && (
+                <div className="att">
+                  {c.opposite || c.claim}
+                  {c.effect && <div style={{ color: 'var(--dim)', marginTop: 4 }}>{c.effect}</div>}
+                  {c.url && <div style={{ marginTop: 4 }}><a href={c.url} target="_blank" rel="noopener noreferrer">{host(c.url)}</a></div>}
+                  {resp?.response && <div className="resp">{resp.response}</div>}
+                  {resp?.changes && <div className="chg">изменения оценок: {resp.changes}</div>}
+                </div>
+              )}
+            </Fragment>
+          )
+        })}
       </div>
-      {shown.map((i) => {
-        const c = r.claims[i], resp = r.responses[i]
-        return (
-          <div key={i} className="att">
-            <span className={`v ${c.verdict}`}>{RU.verdict[c.verdict] || c.verdict}</span> {c.opposite || c.claim}
-            {c.effect && <div style={{ color: 'var(--dim)', marginTop: 4 }}>{c.effect}</div>}
-            {c.url && <div style={{ marginTop: 4 }}><a href={c.url} target="_blank" rel="noopener noreferrer">{host(c.url)}</a></div>}
-            {resp?.response && <div className="resp">{resp.response}</div>}
-            {resp?.changes && <div className="chg">изменения оценок: {resp.changes}</div>}
-          </div>
-        )
-      })}
       {open !== 'all' && r.claims.length > 0 && <button className="more" onClick={() => setOpen('all')}>показать все атаки и ответы →</button>}
     </section>
   )

@@ -115,6 +115,17 @@ def partition_fields(fields: list[Any], shard_size: int = 10) -> list[list[Any]]
 _QUOTE_NOISE = re.compile(r"[\s ​\"'«»“”„‘’`]+")
 
 
+def _russian_name_error(name: Any) -> dict | None:
+    if isinstance(name, str) and re.search("[А-Яа-яЁё]", name):
+        return None
+    return {
+        "error": (
+            "name_ru is required and must be the technology's name in Russian; "
+            "put the English name in name_en and call again"
+        )
+    }
+
+
 def _quote_key(text: str) -> str:
     return _QUOTE_NOISE.sub(" ", text or "").strip(" .,;:…").casefold()
 
@@ -382,9 +393,15 @@ ORCHESTRATOR_TOOLS: list[dict] = [
                     },
                     "name_ru": {
                         "type": "string",
-                        "description": "Defaults to the field's current focus when omitted.",
+                        "description": (
+                            "Required: the technology's name in Russian. Keep product and "
+                            "standard names as written."
+                        ),
                     },
-                    "name_en": {"type": "string"},
+                    "name_en": {
+                        "type": "string",
+                        "description": "English name; defaults to the field's current focus.",
+                    },
                     "corpus_query": {
                         "type": "string",
                         "minLength": 1,
@@ -4017,9 +4034,13 @@ class Orchestration:
         why_ru = arguments["why_ru"]
         if completed_review is None:
             why_ru += "\n\nПроверка не завершена: " + incomplete_reason.strip()
+        name_error = _russian_name_error(arguments.get("name_ru"))
+        if name_error is not None:
+            return name_error
         entry_arguments = dict(arguments)
         entry_arguments["corpus_query"] = validated["corpus_query"]
-        entry_arguments["name_ru"] = arguments.get("name_ru") or field.focus
+        entry_arguments["name_ru"] = arguments["name_ru"].strip()
+        entry_arguments["name_en"] = arguments.get("name_en") or getattr(field, "focus", None)
         (
             entry,
             quoted,
@@ -4251,11 +4272,13 @@ class Orchestration:
         )
         if citation_error is not None:
             return citation_error
+        name_error = _russian_name_error(arguments.get("name_ru"))
+        if name_error is not None:
+            return name_error
         entry_arguments = dict(arguments)
         entry_arguments["corpus_query"] = validated["corpus_query"]
-        entry_arguments["name_ru"] = arguments.get("name_ru") or (
-            field.focus if field is not None else arguments.get("name_en") or ""
-        )
+        entry_arguments["name_ru"] = arguments["name_ru"].strip()
+        entry_arguments["name_en"] = arguments.get("name_en") or getattr(field, "focus", None)
         entry, quoted, unmatched, dropped = await self._persist_entry(
             entry_arguments,
             agent_id,

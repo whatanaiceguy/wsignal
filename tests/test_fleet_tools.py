@@ -911,7 +911,7 @@ async def test_write_entry_falls_back_to_snippet_when_no_page_exists(monkeypatch
 
 
 @pytest.mark.asyncio
-async def test_write_entry_defaults_name_to_renamed_field_focus(monkeypatch):
+async def test_write_entry_requires_russian_name_and_defaults_english_to_field_focus(monkeypatch):
     async def effort_for(_session, _agent_ids):
         return {"searches_run": 0, "sources_checked": 0}
 
@@ -919,12 +919,22 @@ async def test_write_entry_defaults_name_to_renamed_field_focus(monkeypatch):
     orchestration, session, document = _citation_writer("ru")
     arguments = _citation_arguments(document.url)
     arguments.pop("name_ru")
+    arguments.pop("name_en", None)
     arguments["citations"] = []
 
+    missing = await orchestration._write_entry(arguments, 20)
+    assert "name_ru is required" in missing["error"]
+    arguments["name_ru"] = "SSD for KV-cache"
+    latin = await orchestration._write_entry(arguments, 20)
+    assert "name_ru is required" in latin["error"]
+    assert not [row for row in session.added if isinstance(row, Entry)]
+
+    arguments["name_ru"] = "SSD как уровень KV-кэша"
     result = await orchestration._write_entry(arguments, 20)
 
     entry = next(row for row in session.added if isinstance(row, Entry))
-    assert entry.name_ru == "SSD as KV-cache tier for inference"
+    assert entry.name_ru == "SSD как уровень KV-кэша"
+    assert entry.name_en == "SSD as KV-cache tier for inference"
     assert result["entry_id"] == entry.id
 
 

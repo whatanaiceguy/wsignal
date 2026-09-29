@@ -195,7 +195,7 @@
 .pub details.fold{border-top:1px solid var(--line)}.pub details.fold:last-of-type{border-bottom:1px solid var(--line)}
 .pub details.fold>summary{cursor:pointer;list-style:none;padding:8px 0;display:flex;gap:10px;align-items:center;font:600 12px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--dim)}.pub details.fold>summary::-webkit-details-marker{display:none}.pub details.fold>summary::before{content:"▸";color:var(--mute)}.pub details.fold[open]>summary::before{content:"▾"}.pub details.fold>summary .x{margin-left:auto;text-transform:none;letter-spacing:0;font-weight:400;color:var(--mute)}
 .pub details.fold>.body{padding:7px 11px;margin:0 0 12px;border:1px solid color-mix(in srgb,var(--mute) 55%,transparent);border-left-width:2px;border-radius:4px}
-.pub .pills{display:flex;flex-wrap:wrap;gap:6px;padding:10px 12px}.pub .pill{font:12.5px var(--sans);border:1px solid;border-radius:12px;padding:3px 10px;cursor:pointer;background:none;color:inherit;max-width:100%;text-align:left}.pub .pill b{font:600 11.5px var(--mono);text-transform:uppercase;margin-right:6px}
+.pub .pills{display:flex;flex-wrap:wrap;gap:6px;padding:10px 12px}.pub .pill{font:12.5px var(--sans);border:1px solid;border-radius:12px;padding:3px 10px;cursor:pointer;background:none;color:inherit;max-width:100%;text-align:left}.pub .pill b{font:600 11.5px var(--mono);text-transform:uppercase;margin-right:6px}.pub .pill .chev{margin-left:6px;color:var(--mute)}.pub .pills>.att{flex-basis:100%;padding:2px 4px 10px 12px;border-bottom:none}.pub .pill:hover .chev{color:inherit}
 .pub .pill.proven{border-color:#5c2a28;color:#f9b3ae}.pub .pill.proven b{color:var(--r)}.pub .pill.partly{border-color:#5b4a1b;color:#f0d78a}.pub .pill.partly b{color:var(--a)}.pub .pill.not_proven{border-color:#23542e;color:#a7e3b2}.pub .pill.not_proven b{color:var(--g)}.pub .pill.on{background:var(--p2)}
 .pub .vsum{display:flex;gap:8px;flex-wrap:wrap;padding:10px 12px 0;font:12px var(--mono)}.pub .vsum span{padding:2px 8px;border-radius:3px}.pub .vs-proven{background:#2a1413;color:var(--r)}.pub .vs-partly{background:#2a2410;color:var(--a)}.pub .vs-not_proven{background:#10261a;color:var(--g)}
 .pub .badge{font:11.5px var(--mono);padding:1px 6px;border-radius:3px;border:1px solid var(--line);color:var(--dim)}.pub .badge.low{border-color:#5b4a1b;color:var(--a)}.pub .badge.gen{border-color:#2c3f5c;color:var(--b)}
@@ -228,7 +228,7 @@
 .pub .mets{grid-template-columns:repeat(5,auto)}
 .pub .cit,.pub .att,.pub .mets,.pub .trans,.pub details.fold>.body,.pub svg{break-inside:avoid}
 .pub .doc h2{break-after:avoid}
-.pub .doc .pills{display:none}
+.pub .doc .pills>.pill{display:none}.pub .doc .pills{padding:0}
 .pub .cit q.hid{display:block}.pub .cit .tog::before{content:none}
 }
 .pub .cq{display:flex;gap:6px;margin-bottom:10px}.pub .cq input{flex:1;min-width:0;background:var(--bg);border:1px solid var(--line);border-radius:4px;color:var(--tx);font:13px var(--mono);padding:7px 10px;outline:none}.pub .cq input:focus{border-color:var(--g)}.pub .cq .btn{padding:6px 10px}

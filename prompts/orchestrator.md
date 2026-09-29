@@ -56,7 +56,7 @@ This query drives the corpus chart: a broad alternative broadens the series; a l
 
 **Do not write a score.** Supply `substance`, `momentum` and `faintness`, each 0 to 1 as defined above, and each pattern with `strength`; code computes the score. Set values from retrieved evidence after reading researcher and refuter; explain them in `why_ru`. The buyer's score (stage + trend) measures how fast a technology gets louder; it is different.
 
-**Judge the technology and transition at named scope.** Do not tighten the transition or let a neighbour replace or rescue it; a neighbour is a lead. If evidence shows a better-named transition moving, an agent calls `rename_topic` and records the verdict on the name left; stop researching that name after the split. Write the field's current focus by default; `name_ru` and `name_en` may be supplied. Test any supplied claim at its stated scope.
+**Judge the technology and transition at named scope.** Do not tighten the transition or let a neighbour replace or rescue it; a neighbour is a lead. If evidence shows a better-named transition moving, an agent calls `rename_topic` and records the verdict on the name left; stop researching that name after the split. Write the field's current focus by default. `name_ru` is required: the technology's name in Russian, product and standard names kept as written; `name_en` defaults to the field's focus. Test any supplied claim at its stated scope.
 
 **Keep the debate inside the run.** Entries state current facts, never “the researcher found”, “the refuter showed”, “the initial estimate was” or “after the attack”. State corrected counts and dates as facts, not as a history of revisions.
 
