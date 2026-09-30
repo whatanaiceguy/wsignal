@@ -12,7 +12,7 @@
 Ничего не берётся из «памяти» модели: каждое утверждение в отчёте опирается на скачанный и сохранённый
 документ, а цитата сверяется с его текстом.
 
-- Работающий сервис: <https://app.1f608.com> (или просто <https://1f608.com>)
+- Работающий сервис: <https://app.1f608.com> (или <https://ru.1f608.com>)
 - Репозиторий: <https://github.com/whatanaiceguy/wsignal>
 - Презентация: [documentation/wsignal-LCT2026.pptx](documentation/wsignal-LCT2026.pptx)
 - Методология: [documentation/METHODOLOGY.md](documentation/METHODOLOGY.md)
